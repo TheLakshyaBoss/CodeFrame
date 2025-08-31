@@ -6,4 +6,4 @@ CodeFrame is a simple, browser-based tool that lets you paste your code and inst
 
 Multiple language support.
 
-<img width="1080" height="708" alt="script js" src="https://github.com/user-attachments/assets/0076a1ba-5424-4f5d-b045-fcc80b3a0d9e" />
+<img width="1080" height="654" alt="styles css" src="https://github.com/user-attachments/assets/48fc3776-9d6c-46de-ad0b-58d9676774c8" />
