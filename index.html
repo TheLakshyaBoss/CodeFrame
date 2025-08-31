@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CodeFrame — Snippet to Image</title>
+
+    <link href="styles.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <header>CodeFrame</header>
+
+  <div class="app">
+    <div class="controls">
+        <h2>Settings</h2>
+
+        <div class="row">
+            <label for="lang">Language</label>
+            <select id="lang">
+                <option value="language-javascript">JavaScript</option>
+                <option value="language-css">CSS</option>
+                <option value="language-markup">HTML</option>
+                <option value="language-python">Python</option>
+            </select>
+            <label style="width:70px; margin-left:auto;">Font size</label>
+            <input id="fontSize" type="number" min="10" max="20" value="13" style="width:70px;">
+        </div>
+
+        <div class="row">
+            <label for="title">Title</label>
+            <input id="title" type="text" placeholder="filename.js" value="snippet.js">
+        </div>
+
+        <textarea id="codeInput" placeholder="Paste your code here...">
+// Try pasting code here — then press Render
+function hello(name) {
+console.log('Hello, ' + name);
+}
+hello('World');
+        </textarea>
+
+        <div style="display:flex; gap:8px; margin-top:14px;">
+            <button class="btn" id="renderBtn">Render</button>
+            <button class="small" id="downloadBtn">Download Image</button>
+            <button class="small" id="copyBtn">Copy HTML</button>
+        </div>
+    </div>
+
+    <div class="preview-wrap">
+        <div id="captureArea" class="preview" aria-live="polite">
+            <div class="meta">
+                <div class="title" id="previewTitle">snippet.js</div>
+                <div class="window-dots">
+                    <div class="dot"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+            </div>
+            <pre class="language-javascript"><code id="previewCode" class="language-javascript"></code></pre>
+        </div>
+
+        <div class="footer">
+            <div>Preview</div>
+            <div style="font-size:13px; color:#64748b;">
+                <span id="charCount">0</span> chars
+            </div>
+        </div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
